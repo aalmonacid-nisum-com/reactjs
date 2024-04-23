@@ -1,68 +1,73 @@
-const Navbar = () => {
-  return (
-    <>
-    <header className="header sticky-top">
-        <nav className="navbar navbar-expand-md navbar-dark bg-header">
-            <div className="container-fluid">
+const Navbar = ({ Link, useLocation }) => {
 
-                <a className="navbar-brand" href="#">
-                    <a href="index.html" className="me-2"><img src="/src/assets/images/html/logo-empresa-blanco.svg" className="img-fluid" width="70" alt="CHef" /></a>
-                </a>
+    //agrego una funcion para agregar la clase activea navbar, dependiendo de la página que se esta mostrando
+    const location = useLocation();
 
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+    const isActive = (path) => {
+        return location.pathname === path ? "active" : "";
+    };
+    return (
+        <>
+        <header className="header sticky-top">
+            <nav className="navbar navbar-expand-md navbar-dark bg-header">
+                <div className="container-fluid">
+                    
+                    <Link to="/" className="me-2 navbar-brand"><img src="/images/html/logo-empresa-blanco.svg" className="img-fluid" width="70" alt="CHef" /></Link>
 
-                <div className="collapse navbar-collapse" id="navbarCollapse">
-                    <ul className="navbar-nav me-auto mb-2 mb-md-0">
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="pages/productos.html">Tienda</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Productos</a>
-                            <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="pages/productos.html">Pescados</a></li>
-                                <li><a className="dropdown-item" href="pages/productos.html">Mariscos</a></li>
-                                <li><a className="dropdown-item" href="pages/productos.html">Postres</a></li>
-                                <li><a className="dropdown-item" href="pages/productos.html">Congelados</a></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="pages/productos.html">Promociones</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="pages/recetas.html">Recetas</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="pages/conocenos.html">Conócenos</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="pages/contactanos.html">Escríbenos</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="" className="btn btn-primary py-2 px-4">Regístrate aquí</a>
-                        </li>
-                    </ul>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-                    <div className="nav-secondary d-flex">
-                        <a href="">
-                            <i className="fa-solid fa-user"></i><br />Mi cuenta
-                        </a>
-                        <a href="">
-                            <i className="fa-solid fa-cart-shopping"></i>
-                        </a>
-                        <a href="">
-                            <i className="fa-solid fa-magnifying-glass"></i>
-                        </a>
+                    <div className="collapse navbar-collapse" id="navbarCollapse">
+                        <ul className="navbar-nav me-auto mb-2 mb-md-0">
+                            <li className="nav-item">
+                                <Link className={`nav-link ${isActive("/")}`} aria-current="page" to="/">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/tienda" className={`nav-link ${isActive("/tienda")}`}>Tienda</Link>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <Link className={`nav-link dropdown-toggle ${isActive('/productos')}`} to="#" data-bs-toggle="dropdown">Productos</Link>
+                                <ul className="dropdown-menu">
+                                    <li><Link className="dropdown-item" to="/productos">Pescados</Link></li>
+                                    <li><Link className="dropdown-item" to="/productos">Mariscos</Link></li>
+                                    <li><Link className="dropdown-item" to="/productos">Postres</Link></li>
+                                    <li><Link className="dropdown-item" to="/productos">Congelados</Link></li>
+                                </ul>
+                            </li>
+                            <li className="nav-item">
+                                <Link className={`nav-link ${isActive("/promociones")}`} to="/productos">Promociones</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className={`nav-link ${isActive("/recetas")}`} to="/recetas">Recetas</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/conocenos" className={`nav-link ${isActive("/conocenos")}`}>Conócenos</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className={`nav-link ${isActive("/contactanos")}`} to="/contactanos">Escríbenos</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="#" className="btn btn-primary py-2 px-4">Regístrate aquí</Link>
+                            </li>
+                        </ul>
+
+                        <div className="nav-secondary d-flex">
+                            <Link to="">
+                                <i className="fa-solid fa-user"></i><br />Mi cuenta
+                            </Link>
+                            <Link to="">
+                                <i className="fa-solid fa-cart-shopping"></i>
+                            </Link>
+                            <Link to="">
+                                <i className="fa-solid fa-magnifying-glass"></i>
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-    </>
+            </nav>
+        </header>
+        </>
   )
 }
 
