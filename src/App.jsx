@@ -5,10 +5,11 @@ import HomeContainer from "./components/layout/pages/home/homeContainer/HomeCont
 import Footer from "./components/layout/footer/Footer";
 import Tienda from "./components/layout/pages/tienda/Tienda";
 import Conocenos from "./components/layout/pages/conocenos/Conocenos";
-import ProductosHome from "./components/layout/pages/productos/ProductosHome";
+import ProductosHome from "./components/layout/pages/productos/portadaProductos/Productos";
 import Recetas from "./components/layout/pages/recetas/Recetas";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import Contactanos from "./components/layout/pages/formularios/contactanos/Contactanos";
+import DetalleProductos from "./components/layout/pages/productos/detalleProductos/DetalleProductos";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/productos" element={<ProductosHome />} />
             <Route path="/recetas" element={<Recetas />} />
             <Route path="/contactanos" element={<Contactanos />} />
+            <Route path="/detalleProductos" element={<DetalleProductos />} />
           </Routes>
         </main>
         <Footer Link={Link} />

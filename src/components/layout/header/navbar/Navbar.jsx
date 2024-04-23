@@ -1,6 +1,6 @@
 const Navbar = ({ Link, useLocation }) => {
 
-    //agrego una funcion para activar la clase active, dependiendo de la página que se esta mostrando
+    //agrego una funcion para agregar la clase activea navbar, dependiendo de la página que se esta mostrando
     const location = useLocation();
 
     const isActive = (path) => {
@@ -48,20 +48,20 @@ const Navbar = ({ Link, useLocation }) => {
                                 <Link className={`nav-link ${isActive("/contactanos")}`} to="/contactanos">Escríbenos</Link>
                             </li>
                             <li className="nav-item">
-                                <a href="" className="btn btn-primary py-2 px-4">Regístrate aquí</a>
+                                <Link to="#" className="btn btn-primary py-2 px-4">Regístrate aquí</Link>
                             </li>
                         </ul>
 
                         <div className="nav-secondary d-flex">
-                            <a href="">
+                            <Link to="">
                                 <i className="fa-solid fa-user"></i><br />Mi cuenta
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="">
                                 <i className="fa-solid fa-cart-shopping"></i>
-                            </a>
-                            <a href="">
+                            </Link>
+                            <Link to="">
                                 <i className="fa-solid fa-magnifying-glass"></i>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
