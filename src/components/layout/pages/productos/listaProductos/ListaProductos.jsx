@@ -1,11 +1,11 @@
-import Productos from './Productos';
+import ProductosCards from "../productosCards/ProductosCards";
 
 const ListaProductos = ({ productos }) => {
     return (
         <div className="row g-4">
-            {productos.map((producto, index) => (
-                <div className="col-lg-6" key={index}>
-                    <Productos 
+            {productos.map((producto) => (
+                <div className="col-lg-6" key={producto.id}>
+                    <ProductosCards 
                         imagen={producto.imagen}
                         nombre={producto.nombre}
                         precio={producto.precio}

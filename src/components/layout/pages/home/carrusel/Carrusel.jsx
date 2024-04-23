@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Carrusel = () => {
   return (
     <div id="carruselHome" className="carousel slide mb-6" data-bs-ride="carousel">
@@ -7,20 +9,20 @@ const Carrusel = () => {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src="/src/assets/images/fotos/foto-home.png" className="img-fluid" width="100%" alt="Quiénes somos" />
+                <img src="/images/fotos/foto-home.png" className="img-fluid" width="100%" alt="Quiénes somos" />
                 <div className="container">
                     <div className="carousel-caption text-start">
                         <div className="text">
                             <h2>Quiénes somos</h2>
                             <p className="text">Seleccionamos productos de primera calidad y los llevamos a tu mesa al mejor precio.</p>
-                            <p><a className="btn btn-lg btn-primary" href="pages/conocenos.html">Leer más</a></p>
+                            <p><Link className="btn btn-lg btn-primary" to="/conocenos">Leer más</Link></p>
                         </div>
                     </div>
                 </div>
               </div>
 
               <div className="carousel-item">
-                <img src="/src/assets/images/fotos/foto-home-02.png" className="img-fluid" width="100%" alt="Recetas" />
+                <img src="/images/fotos/foto-home-02.png" className="img-fluid" width="100%" alt="Recetas" />
                 <div className="container">
                   <div className="carousel-caption text-start">
                     <div className="text">

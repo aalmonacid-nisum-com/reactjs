@@ -1,4 +1,4 @@
-const Footer = () => {
+const Footer = ({ Link }) => {
   return (
     <footer className="footer">
         <a href="#" className="btn-up">
@@ -11,7 +11,7 @@ const Footer = () => {
                     <h4>Compañia</h4>
                     <ul>
                         <li>
-                            <a href="pages/conocenos.html">Conócenos</a>
+                            <Link to="/conocenos">Conócenos</Link>
                         </li>
                         <li>
                             <a href="pages/conocenos.html">Escríbenos</a>

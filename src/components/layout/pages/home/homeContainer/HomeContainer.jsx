@@ -1,7 +1,7 @@
 import Carrusel from "../carrusel/Carrusel"
 import NuestrosValores from "../nuestrosValores/NuestrosValores"
 import Ubicacion from "../ubicacion/Ubicacion"
-import ListaProductos from '../../productos/ListaProductos';
+import ListaProductos from "../../productos/listaProductos/ListaProductos";
 import { productosPromociones, productosCongelados, productosMariscos } from '../../productos/productosData';
 
 const HomeContainer = () => {

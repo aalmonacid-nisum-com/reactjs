@@ -1,4 +1,4 @@
-const Productos = ({ imagen, nombre, precio, descripcion }) => {
+const ProductosCards = ({ imagen, nombre, precio, descripcion }) => {
     return (
         <div className="d-flex align-items-center">
             <img className="img-fluid rounded" src={imagen} alt={nombre} />
@@ -13,4 +13,4 @@ const Productos = ({ imagen, nombre, precio, descripcion }) => {
     );
 }
 
-export default Productos;
+export default ProductosCards;
